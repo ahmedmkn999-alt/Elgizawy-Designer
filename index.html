@@ -9,14 +9,14 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Elgizawy Designer | Web Developer</title>
+    <title>Elgizawy Designer | Web Developer (Light Theme)</title>
     <meta name="description" content="الموقع الرسمي للمصمم الجيزاوي. خدمات تطوير مواقع ومتاجر إلكترونية. خبرة 3 سنوات.">
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         /* ========================================= */
-        /* CSS Styles (Dark Theme) */
+        /* CSS Styles (Light Theme Colors) */
         /* ========================================= */
         * { box-sizing: border-box; }
         
@@ -24,8 +24,10 @@
             font-family: 'Tajawal', sans-serif; 
             margin: 0; 
             padding: 0; 
-            background-color: #050505; 
-            color: #fff; 
+            /* خلفية فاتحة جداً بدلاً من الأسود */
+            background-color: #f8f9fa; 
+            /* لون النص الأساسي داكن */
+            color: #212529; 
             overflow-x: hidden;
             -webkit-user-select: none;
             user-select: none; 
@@ -35,7 +37,9 @@
         #networkCanvas {
             position: fixed; top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: -1; opacity: 0.8;
+            z-index: -1; 
+            /* تقليل الشفافية قليلاً لأن الأسود قوي على الأبيض */
+            opacity: 0.6;
         }
 
         /* الهيدر */
@@ -43,25 +47,27 @@
             position: relative;
             padding: 40px 20px;
             text-align: center;
-            background: linear-gradient(to bottom, rgba(15, 12, 41, 0.9), transparent);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* تدرج أبيض شفاف */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), transparent);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        h1 { font-size: 2.5rem; margin: 0; font-weight: 900; letter-spacing: 2px; color: #fff; text-transform: uppercase; }
-        .subtitle { font-size: 1.1rem; color: #aaa; margin-top: 5px; }
+        h1 { font-size: 2.5rem; margin: 0; font-weight: 900; letter-spacing: 2px; color: #000; text-transform: uppercase; }
+        .subtitle { font-size: 1.1rem; color: #666; margin-top: 5px; }
 
-        /* الكروت والخدمات */
+        /* الكروت والحاويات (نظام الكروت البيضاء النظيفة) */
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        .glass-card {
-            background: rgba(20, 20, 20, 0.6); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px; border-radius: 15px;
+        .main-card {
+            background: #fff; /* كارت أبيض صريح */
+            border: 1px solid #eee; /* إطار رمادي فاتح */
+            padding: 40px 30px; border-radius: 15px;
             margin-bottom: 30px; text-align: center;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            /* ظل ناعم ليبرز الكارت */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        /* أزرار التواصل */
+        /* أزرار التواصل (ألوانها ثابتة لأنها مميزة) */
         .btn-group { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
         
         .btn-cta {
@@ -69,50 +75,54 @@
             font-weight: bold; display: flex; align-items: center; gap: 10px;
             transition: transform 0.3s; color: #fff;
         }
-        .btn-whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); }
-        .btn-telegram { background: linear-gradient(45deg, #229ED9, #0088cc); box-shadow: 0 0 15px rgba(34, 158, 217, 0.4); }
+        .btn-whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+        .btn-telegram { background: linear-gradient(45deg, #229ED9, #0088cc); box-shadow: 0 5px 15px rgba(34, 158, 217, 0.3); }
         
         .btn-cta:hover { transform: scale(1.05); }
 
         /* الخدمات */
-        .section-title { text-align: center; margin: 50px 0 30px; font-size: 1.8rem; color: #fff; }
+        .section-title { text-align: center; margin: 50px 0 30px; font-size: 1.8rem; color: #000; font-weight: 800; }
         .services-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
         
         .service-card {
-            background: rgba(30, 30, 30, 0.7); backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #fff;
+            border: 1px solid #eee;
             padding: 25px; border-radius: 12px; width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s, border-color 0.3s;
         }
         .service-card:hover { transform: translateY(-5px); border-color: #25D366; }
         .service-card h3 { color: #25D366; margin-bottom: 10px; }
-        .service-card p { color: #bbb; font-size: 0.95rem; }
+        .service-card p { color: #555; font-size: 0.95rem; }
 
         /* قائمة الأعمال */
         .portfolio-item { 
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #fff; 
+            border: 1px solid #eee;
             margin: 15px auto; padding: 20px; border-radius: 10px; max-width: 600px; 
             display: flex; justify-content: space-between; align-items: center;
-            transition: background 0.3s; text-decoration: none; color: #fff;
+            transition: all 0.3s; text-decoration: none; 
+            color: #333; /* لون النص داكن */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .portfolio-item:hover { background: rgba(255, 255, 255, 0.1); border-color: #25D366; }
+        .portfolio-item:hover { background: #f9f9f9; border-color: #25D366; transform: translateX(5px); }
         
         .project-name { font-weight: bold; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
-        .tag { font-size: 0.75rem; background: #333; color: #ccc; padding: 5px 12px; border-radius: 20px; }
+        /* لون التاج خلفية رمادي فاتح ونص غامق */
+        .tag { font-size: 0.75rem; background: #e9ecef; color: #495057; padding: 5px 12px; border-radius: 20px; font-weight: bold; }
 
         /* الفوتر */
-        footer { text-align: center; margin-top: 80px; padding: 40px; background: #000; color: #666; border-top: 1px solid #222; }
+        footer { text-align: center; margin-top: 80px; padding: 40px; background: #f0f0f0; color: #666; border-top: 1px solid #e0e0e0; }
 
         /* زر واتساب العائم */
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
             background-color: #25d366; color: #FFF; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.5); z-index: 100;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 100;
             transition: all 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 0 30px rgba(37, 211, 102, 0.8); }
+        .whatsapp-float:hover { transform: scale(1.1); }
         .whatsapp-float img { width: 35px; height: 35px; }
 
     </style>
@@ -131,9 +141,9 @@
     <div class="container">
         <div style="height: 40px;"></div>
 
-        <section class="glass-card">
-            <h2>3 سنوات من الإبداع الرقمي</h2>
-            <p>
+        <section class="main-card">
+            <h2 style="margin-top: 0;">3 سنوات من الإبداع الرقمي</h2>
+            <p style="color: #555; line-height: 1.6;">
                 متخصص في بناء المواقع الحديثة، المتاجر الإلكترونية، والمنصات التعليمية.
                 <br> أحول فكرتك إلى موقع احترافي متجاوب وسريع.
             </p>
@@ -195,15 +205,17 @@
         const canvas = document.getElementById('networkCanvas');
         const ctx = canvas.getContext('2d');
         let w, h, particles;
-        const particleColor = 'rgba(0, 255, 255, 0.5)'; // لون سماوي نيون
-        const lineColor = 'rgba(0, 255, 255,'; 
+        
+        // --- التغيير هنا: الألوان أصبحت سوداء ---
+        const particleColor = 'rgba(0, 0, 0, 0.6)'; // لون النقاط أسود شفاف
+        const lineColor = 'rgba(0, 0, 0,'; // لون الخطوط أسود
 
         function resize() { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; }
         
         class Particle {
             constructor() {
                 this.x = Math.random() * w; this.y = Math.random() * h;
-                this.vx = (Math.random() - 0.5) * 1.5; this.vy = (Math.random() - 0.5) * 1.5;
+                this.vx = (Math.random() - 0.5) * 1.2; this.vy = (Math.random() - 0.5) * 1.2;
                 this.size = Math.random() * 2 + 1;
             }
             update() {
@@ -214,7 +226,7 @@
             draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = particleColor; ctx.fill(); }
         }
 
-        function init() { resize(); particles = []; let count = window.innerWidth < 768 ? 50 : 100; for (let i = 0; i < count; i++) particles.push(new Particle()); }
+        function init() { resize(); particles = []; let count = window.innerWidth < 768 ? 50 : 90; for (let i = 0; i < count; i++) particles.push(new Particle()); }
         
         function animate() {
             ctx.clearRect(0, 0, w, h);
@@ -223,6 +235,7 @@
                 for (let j = i + 1; j < particles.length; j++) {
                     let d = Math.hypot(p.x - particles[j].x, p.y - particles[j].y);
                     if (d < 120) {
+                        // رسم الخطوط السوداء
                         ctx.beginPath(); ctx.strokeStyle = lineColor + (1 - d/120) + ')';
                         ctx.lineWidth = 0.5; ctx.moveTo(p.x, p.y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
                     }
@@ -233,7 +246,7 @@
 
         window.addEventListener('resize', () => { resize(); init(); }); init(); animate();
 
-        // 2. الحماية ومنع النسخ
+        // 2. الحماية
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onkeydown = e => { 
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85)) return false; 
